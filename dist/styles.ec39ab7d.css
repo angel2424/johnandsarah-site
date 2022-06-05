@@ -1,0 +1,710 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Roaster Regular';
+    src: url('/Roaster-Regular.bc5b60bf.otf')  format('opentype'), /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: 'Roaster Light';
+    src: url('/Roaster-Light.a1aeb57a.otf')  format('opentype'), /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: 'Roaster Bold';
+    src: url('/Roaster-Bold.ce83c14b.otf')  format('opentype'), /* Safari, Android, iOS */
+}
+
+:root {
+    /* Padding */
+    --padding-regular-section: 200px 155px;
+    --padding-inner-section: 0px 155px;
+
+    /* Text */
+
+    --roaster-light: 'Roaster Light', serif;
+    --roaster-regular: 'Roaster Regular', serif;
+    --roaster-bold: 'Roaster Bold', serif;
+    --great-vibes: 'Great Vibes', serif;
+
+    --menu-text: 1.125rem;
+    --main-heading: 9.875rem;
+    --countdown: 5rem;
+    --heading: 3.25rem;
+    --sub-heading: 2.25rem;
+    --sub-heading2: 2rem;
+    --sub-heading3: 1.3rem;
+    --text: 1.5rem;
+    --button: 1.25rem;
+    --map-button: 1.5rem;
+    --hashtag: 1.75rem;
+
+    /* Color */
+    --primary-color: #D4AF37;
+    --secondary-color: #FFF;
+    --accent-color: #DBCBAA;
+    --text-color: #1F1F1F;
+
+}
+
+@media screen and (max-width: 1450px) {
+    :root {
+        --countdown: 4rem;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    :root {
+        --padding-regular-section: 150px 95px;
+        --padding-inner-section: 0px 155px;
+        
+        --menu-text: 3.25rem;
+        --main-heading: 12.1rem;
+        --heading: 3.375rem;
+        --sub-heading: 2.25rem;
+        --sub-heading2: 1.75rem;
+        --sub-heading3: 1.3rem;
+        --button: 1.125rem;
+        --hashtag: 1.75rem;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    :root {
+        --padding-regular-section: 200px 45px;
+        --padding-inner-section: 0px 155px;
+
+        --menu-text: 4.25rem;
+        --main-heading: 8rem;
+        --countdown: 3.125rem;
+        --heading: 3rem;
+        --sub-heading: 2.25rem;
+        --sub-heading2: 1.625rem;
+        --sub-heading3: 1.3rem;
+        --text: 1.75rem;
+        --button: 1.325rem;
+        --hashtag: 1.75rem;
+    }
+}
+
+@media screen and (max-width: 680px) {
+
+    :root {
+        --padding-regular-section: 100px 30px;
+        --padding-inner-section: 0px 155px;
+
+        --menu-text: 2.25rem;
+        --main-heading: 4.25rem;
+        --heading: 2rem;
+        --countdown: 2.125rem;
+        --sub-heading: 2rem;
+        --sub-heading2: 1.4rem;
+        --sub-heading3: 1.3rem;
+        --text: 1.375rem;
+        --button: 1.125rem;
+        --hashtag: 1.25rem;
+    }
+
+}
+
+@media screen and (max-width: 378px) {
+
+    :root {
+        --padding-regular-section: 75px 20px;
+        --padding-inner-section: 0px 155px;
+
+        --menu-text: 1.7rem;
+        --main-heading: 3.825rem;
+        --heading: 1.875rem;
+        --sub-heading: 1.75rem;
+        --sub-heading2: 1.125rem;
+        --sub-heading3: 1.3rem;
+        --text: 1.25rem;
+        --button: 1.125rem;
+        --hashtag: 1.25rem;
+    }
+
+}
+
+@media screen and (max-width: 330px) {
+
+    :root {
+        --main-heading: 2.825rem;
+    }
+
+}
+
+/* Global classes */
+
+.menu_text {
+    font-family: var(--roaster-light);
+    font-size: var(--menu-text);
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin: 0 20px;
+    padding: 5px 0;
+}
+
+.menu_text::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: ease-in-out .5s;
+}
+
+.menu_text:hover::after {
+    width: 100%;
+}
+
+.main_heading {
+    font-family: var(--great-vibes);
+    font-size: var(--main-heading);
+    color: var(--secondary-color);
+    font-weight: 400;
+}
+
+.main_heading span{
+    color: var(--accent-color);
+}
+
+.heading {
+    font-family: var(--roaster-light);
+    font-size: var(--heading);
+    font-weight: 300;
+}
+
+.sub_heading {
+    font-family: var(--roaster-regular);
+    font-size: var(--sub-heading);
+    font-weight: 400;
+    color: var(--primary-color);
+}
+
+.sub_heading2 {
+    font-family: var(--roaster-light);
+    font-size: var(--sub-heading2);
+    font-weight: 300;
+}
+
+.sub_heading3 {
+    font-family: var(--roaster-light);
+    font-size: var(--sub-heading2);
+    letter-spacing: 5px;
+    font-weight: 300;
+}
+
+.text {
+    font-family: var(--roaster-light);
+    font-size: var(--text);
+    letter-spacing: 135.7%;
+}
+
+.hashtag {
+    font-family: var(--roaster-light);
+    font-size: var(--hashtag);
+    letter-spacing: 103.2%;
+    color: var(--secondary-color);
+    font-weight: 400;
+}
+
+.button {
+    width: 345px;
+    height: 65px;
+    border: 2px solid var(--primary-color);
+    background-color: transparent;
+    font-family: var(--roaster-light);
+    font-size: var(--button);
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: ease .4s;
+    opacity: 0.8;
+}
+
+.button:hover {
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+.map_button {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    font-family: var(--roaster-light);
+    font-size: var(--map-button);
+    cursor: pointer;
+    transition: ease .4s;
+}
+
+.map_button::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #1F1F1F;
+    margin-top: 5px;
+    transition: ease .4s;
+}
+
+.map_button:hover::after {
+    width: 0;
+    margin-left: auto;
+}
+
+.map_button:hover {
+    transform: scale(1.04);
+}
+
+@media screen and (max-width: 1250px) {
+
+    .menu_text {
+        margin: 10px 0;
+    }
+
+    .button {
+        width: 415px;
+        height: 75px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+
+    .menu_text {
+        margin: 10px 0;
+    }
+
+    .button {
+        width: 595px;
+        height: 115px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .button {
+        width: 310px;
+        height: 75px;
+    }
+
+    .main_heading {
+        margin: 25px 0;
+    }
+}
+
+@media screen and (max-width: 378px) {
+
+    .button {
+        width: 280px;
+        height: 65px;
+    }
+
+}
+
+/* Nav/Hero */
+
+/* Navbar */
+
+.menu_hamburguer {
+    position: fixed;
+    top: 45px;
+    right: 35px;
+    display: none;
+    z-index: 5;
+}
+
+.menu_hamburguer span {
+    display: block;
+    width: 35px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 25px;
+}
+
+.menu_hamburguer span:not(:last-child) {
+    margin-bottom: 4px;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 95px;
+}
+
+.main_menu {
+    height: 145px;
+    display: flex;
+    align-items: center; 
+    margin-right: auto;
+}
+
+
+/* Header */
+
+.header {
+    background-image: url(/hero_bg.e8dd7a6a.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    max-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.hero_main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: auto 0;
+}
+
+.hero_main h2 {
+    color: var(--secondary-color);
+}
+
+.hero_bottom {
+    position: relative;
+    width: 100%;
+    padding: 50px 95px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero_bottom .mouse_icon {
+    width: 29px;
+    height: 48px;
+    margin-top: -6px;
+    border: 2px solid var(--primary-color);
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mouse_icon .mouse_scrollwheel {
+    display: block;
+    width: 8px;
+    height: 15px;
+    background-color: var(--primary-color);
+    margin: 0 auto;
+    margin-top: 5px;
+    border-radius: 25px;
+    transition: ease .2s;
+    animation: mouse 1.6s infinite;
+}
+
+.hero_hashtag {
+    margin-left: auto;
+    position: relative; 
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    margin-bottom: -50px;
+}
+
+.hero_hashtag::after {
+    content: '';
+    display: inline-block;
+    height: 50px;
+    width: 3px;
+    background-color: var(--primary-color);
+    margin: 0;
+    margin-top: 15px;
+}
+
+/* Countdown */
+
+.countdown {
+    padding: 100px 155px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--accent-color);
+}
+
+.date {
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.time-left {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.time-left h2 {
+    font-size: var(--countdown);
+    font-weight: 400;
+    padding-bottom: 15px;
+}
+
+.time-left h2:not(:last-child) {
+    margin: 0 30px;
+}
+
+/* Wedding info */
+
+.wedding_info {
+    padding: var(--padding-regular-section);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wedding_info h3 {
+    margin-bottom: 100px;
+}
+
+.wedding_times {
+    display: flex;
+    margin-bottom: 100px;
+}
+
+.wedding_time {
+    margin: 0 120px;
+}
+
+.wedding_time h4 {
+    margin-bottom: 10px;
+}
+
+.wedding_location {
+    margin-bottom: 50px;
+}
+
+.wedding_infoButton {
+    margin-bottom: 100px;
+    color: #000;
+}
+
+
+/* Animation Keyframes */
+
+
+@keyframes mouse {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+
+    30% {
+        height: 17px;
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+
+}
+
+/* Media queries */
+
+@media screen and (max-width: 1440px) {
+    
+    .hero_bottom {
+        padding: 0 40px;
+        padding-bottom: 40px;
+    }
+
+    .hero_hashtag {
+        margin-bottom: -40px;
+    }
+
+    .countdown {
+        padding: 95px;
+    }
+
+}
+
+@media screen and (max-width: 1250px) {
+    .menu_text {
+        color: var(--text-color);
+    }
+
+    .menu_hamburguer {
+        display: block;
+    }
+    
+    .menu_hamburguer span {
+        transform-origin: 10px 1px;
+        transition: ease .6s;
+    }
+    
+    .close span:first-child{
+        transform: rotate(45deg);
+    }
+    .close span:last-child{
+        transform: rotate(-45deg);
+    }
+
+    .menu_button {
+        color: var(--text-color);
+        font-size: var(--text);
+        transform: translateY(100px);
+        opacity: 0;
+        transition: none;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        flex-direction: column;
+        background-color: var(--secondary-color);
+        justify-content: center;
+        z-index: 2;
+        clip-path: circle(0.3% at 100% 0);
+    }
+
+    .menu_text {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    .main_menu {
+        flex-direction: column;
+        height: 100%;
+        margin-bottom: 30px;
+        
+    }
+
+
+}
+
+@media screen and (max-width: 1100px) {
+
+    .main_menu {
+        margin-bottom: 75px;
+    }
+
+    .menu_button {
+        font-size: var(--button)
+    }
+
+    .menu_hamburguer {
+        position: fixed;
+        top: 55px;
+        right: 45px;
+    }
+
+    .hero {
+        height: 100%;
+    }
+
+    .hero_main {
+        padding-top: 95px;
+        margin: auto 0;
+    }
+
+    .countdown {
+        padding: 80px 45px;
+    }
+
+    .wedding_time {
+        margin: 0 70px;
+    }
+
+}
+
+@media screen and (max-width: 680px) {
+
+    .hero_savetd {
+        display: none;
+    }
+
+    .nav {
+        padding: 0 20px;
+    }
+
+    .main_menu {
+        margin-bottom: 25px;
+    }
+
+    .menu_hamburguer {
+        position: fixed;
+        top: 55px;
+        right: 25px;
+    }
+
+    .menu_hamburguer span {
+        width: 30px;
+        height: 3px;
+    }
+
+    .countdown {
+        padding: 30px 60px;
+    }
+
+    .wedding_info h3 {
+        margin-bottom: 75px;
+    }
+
+    .wedding_times {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 75px;
+    }
+
+    .wedding_time {
+        margin: 25px 0;
+    }
+
+}
+
+@media screen and (max-width: 378px) {
+
+    .hero_hashtag::after {
+        height: 35px;
+    }
+
+    .hero_main {
+        padding-top: 115px;
+        margin: auto 0;
+    }
+    .hero_bottom .mouse_icon {
+        width: 24px;
+        height: 40px;
+        margin-top: -6px;
+    }
+    
+    .mouse_icon .mouse_scrollwheel {
+        width: 8px;
+        height: 10px;
+        margin-top: 5px;
+
+    }
+
+    .countdown {
+        padding: 55px 20px;
+    }
+
+}
+
+/*# sourceMappingURL=/styles.ec39ab7d.css.map */
