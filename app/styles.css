@@ -249,6 +249,7 @@ button {
     font-size: var(--map-button);
     cursor: pointer;
     transition: ease .4s;
+    width: fit-content;
 }
 
 .map_button::after {
@@ -557,7 +558,51 @@ button {
     margin-bottom: 30px;
 }
 
+/* Location */
 
+.location {
+    padding: var(--padding-regular-section);
+    text-align: center;
+}
+
+.location h2 {
+    margin-bottom: 150px;
+}
+
+.location_sub {
+    color: var(--primary-color);
+}
+
+.location_imgContainer {
+    margin-bottom: 150px;
+    height: 60vh;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.location_img {
+    object-position: center;
+}
+
+.location_content h4 {
+    margin-bottom: 30px;
+}
+
+.location_content p {
+    margin-bottom: 80px;
+}
+
+.location_links {
+    display: flex;
+    justify-content: center;
+}
+
+.location_links button{
+    margin: 0 80px;
+}
 
 
 /* Animation Keyframes */
@@ -596,6 +641,10 @@ button {
 
     .countdown {
         padding: 95px;
+    }
+
+    .story_img {
+        height: 100%;
     }
 
 }
@@ -692,19 +741,29 @@ button {
     .story {
         flex-direction: column;
     }
-
+    
     .story_imgContainer {
         width: 100%;
     }
-
+    
     .story_img {
         width: 100%;
         height: 50vh;
     }
-
+    
     .story_content {
         width: 100%;
         padding: var(--padding-inner-section);
+        padding-bottom: 0px;
+    }
+
+    .location_links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .location_links button {
+        margin: 30px 0px;
     }
 
 }
@@ -756,6 +815,37 @@ button {
         margin-bottom: 50px;
     }
 
+    .location {
+        text-align: left;
+    }
+
+    .location h2 {
+        margin-bottom: 55px;
+        width: 100%;
+    }
+
+    .location_sub {
+        margin-bottom: 20px;
+    }
+
+    .location_imgContainer {
+        margin-bottom: 75px;
+        height: 50vh;
+        justify-content: center;
+    }
+
+    .location_content p {
+        margin-bottom: 40px;
+    }
+
+    .location_links {
+        align-items: flex-start;
+    }
+
+    .location_links button {
+        text-align: left;
+    }
+
 }
 
 @media screen and (max-width: 378px) {
@@ -784,5 +874,15 @@ button {
     .countdown {
         padding: 55px 20px;
     }
+
+    .location h2 {
+        margin-bottom: 40px;
+        width: 100%;
+    }
+
+    .location_imgContainer {
+        margin-bottom: 65px;
+    }
+
 
 }
