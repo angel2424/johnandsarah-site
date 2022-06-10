@@ -2,6 +2,9 @@ import gsap from 'gsap'
 
 const hamburguer = document.querySelector('.menu_hamburguer')
 const nav = document.querySelector('.nav')
+const galleryItems = document.querySelectorAll('.gallery_item')
+const Popup = document.querySelector('.gallery_popup')
+const galleryPopup = document.querySelectorAll('.popup_img')
 
 // Mobile Menu function and animation
 
@@ -22,6 +25,8 @@ if (window.innerWidth = 1250) {
 
 let tl = gsap.timeline();
 
+
+
 // Countdown Timer
 
 let timeLeft = document.querySelector('#time-left')
@@ -40,7 +45,7 @@ const secondsContainer = document.querySelector('.seconds')
 const countDown = () => {
     const today = new Date();
     const timeSpan = date - today;
-
+    
     if(timeSpan <= - day) {
         timeLeft.innerHTML = 'Gracias por asisitir a nuestro gran dia'
         clearInterval(timerId)
@@ -55,12 +60,38 @@ const countDown = () => {
     const hours = Math.floor((timeSpan % day) / hour)
     const minutes = Math.floor((timeSpan % hour) / minute)
     const seconds = Math.floor((timeSpan % minute) / second)
-
+    
     daysContainer.innerHTML = days + ' days'
     hoursContainer.innerHTML = hours + ' hours'
     minutesContainer.innerHTML = minutes + ' minutes'
     secondsContainer.innerHTML = seconds + ' seconds'
-
+    
 }
 
 timerId = setInterval(countDown, second)
+
+
+//Gallery popup
+
+let arr = Array.from(galleryPopup);
+
+const closePopup = () => {         
+    arr.map(item => {item.style.display = 'none'})
+    Popup.style.display = 'none'
+};
+
+function showImage(index) {
+    arr[index].style.display = 'block'
+}
+
+
+
+Array.from(galleryItems).map((item, index) => {
+    item.addEventListener('click', () => {
+        showImage(index)
+        console.log(index)
+        Popup.style.display = 'block'
+        tl.from('.gallery_popup', {opacity: 0, ease: 'power2.in', duration: .5})
+        tl.to('.popup_img', { 'clip-path' : 'circle(71.1% at 50% 50%)', ease: 'power2.easeInOut'})
+    })
+})
