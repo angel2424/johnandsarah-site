@@ -5,6 +5,7 @@ const nav = document.querySelector('.nav')
 const galleryItems = document.querySelectorAll('.gallery_item')
 const Popup = document.querySelector('.gallery_popup')
 const galleryPopup = document.querySelectorAll('.popup_img')
+const popupClose = document.querySelector('.popup_close')
 
 // Mobile Menu function and animation
 
@@ -73,25 +74,23 @@ timerId = setInterval(countDown, second)
 
 //Gallery popup
 
+let galleryTl = gsap.timeline();
+
 let arr = Array.from(galleryPopup);
+let ind = null;
 
-const closePopup = () => {         
-    arr.map(item => {item.style.display = 'none'})
-    Popup.style.display = 'none'
-};
+if(window.innerWidth >= 1250) {
+    popupClose.addEventListener('click', () => {
+    Popup.classList.toggle('gallery_popup--active')
+    arr[ind].classList.toggle('popup_img--active')
+    })
 
-function showImage(index) {
-    arr[index].style.display = 'block'
+    Array.from(galleryItems).map((item, index) => {
+        item.addEventListener('click', () => {
+            Popup.classList.toggle('gallery_popup--active')
+            arr[index].classList.toggle('popup_img--active')
+            ind = index;
+        })
+    })
 }
 
-
-
-Array.from(galleryItems).map((item, index) => {
-    item.addEventListener('click', () => {
-        showImage(index)
-        console.log(index)
-        Popup.style.display = 'block'
-        tl.from('.gallery_popup', {opacity: 0, ease: 'power2.in', duration: .5})
-        tl.to('.popup_img', { 'clip-path' : 'circle(71.1% at 50% 50%)', ease: 'power2.easeInOut'})
-    })
-})

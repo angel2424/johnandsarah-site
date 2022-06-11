@@ -49,6 +49,7 @@ button {
     --button: 1.25rem;
     --map-button: 1.5rem;
     --hashtag: 1.75rem;
+    --time: 1.7rem;
     
     /* Color */
     --primary-color: #D4AF37;
@@ -91,7 +92,7 @@ button {
         --countdown: 3.125rem;
         --heading: 3rem;
         --sub-heading: 2.25rem;
-        --sub-heading2: 1.625rem;
+        --sub-heading2: 2rem;
         --sub-heading3: 1.3rem;
         --text: 1.75rem;
         --button: 1.325rem;
@@ -270,6 +271,11 @@ button {
 
 .map_button:hover {
     transform: scale(1.04);
+}
+
+.time {
+    font-family: var(--roaster-light);
+    font-size: var(--time);
 }
 
 @media screen and (max-width: 1250px) {
@@ -687,20 +693,17 @@ button {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.572);
     z-index: 6;
-    display: flex;
     justify-content: center;
     align-items: center;
     padding: 100px 200px;
     display: none;
-    opacity: 1;
 }
 
 .popup_img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    display: none;
-    clip-path: circle(0.3% at 100% 0);
+    display: none;   
 }
 
 .popup_close {
@@ -711,6 +714,103 @@ button {
     color: var(--primary-color);
     cursor: pointer;
     animation: close 1.5s infinite;
+}
+
+.gallery_popup--active {
+    display: flex;
+    animation: opacity .8s ease-in-out;
+    opacity: 1;
+}
+
+.popup_img--active {
+    display: block;
+}
+
+/* Events */
+
+.events {
+    padding: var(--padding-regular-section);
+    text-align: center;
+}
+
+.events h4 {
+    margin-bottom: 30px;
+}
+
+.timeline {
+    position: relative;
+    margin: 75px auto;
+    width: 100%;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: var(--accent-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-3px);
+}
+
+.container {
+    padding: 50px 0;
+    position: relative;
+    width: 50%;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    border-radius: 100%;
+}
+
+.content {
+    position: relative;
+    padding: 50px 150px;
+}
+
+.left {
+    left: 0%;
+}
+
+.left::after {
+    right: 0;
+    top: 50%;
+    transform: translateX(50%);
+    z-index: 2;
+}
+
+.right {
+    left: 50%;
+}
+
+.right::after {
+    left: 0;
+    top: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.content {
+    text-align: left;
+}
+
+.content h3 {
+    margin-bottom: 20px;
+    font-family: var(--roaster-regular);
+}
+
+.content_time {
+    color: var(--primary-color);
+}
+
+.content p {
+    margin-top: 10px;
 }
 
 /* Animation Keyframes */
@@ -729,7 +829,7 @@ button {
 
     100% {
         transform: translateY(15px);
-        opacity: 0;
+        opacity: 1  ;
     }
 
 }
@@ -748,6 +848,33 @@ button {
     }
 
 }
+
+@keyframes opacity{
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+@keyframes opacityBack{
+    0% {
+        opacity: 1;
+    }
+
+    95% {
+        opacity: 0;
+        
+    }
+    
+    100% {
+        display: none;
+    }
+}
+
 
 /* Media queries */
 
@@ -768,6 +895,10 @@ button {
 
     .story_img {
         height: 100%;
+    }
+
+    .content {
+        padding: 50px 100px;
     }
 
 }
@@ -823,6 +954,10 @@ button {
         height: 100%;
         margin-bottom: 30px;
         
+    }
+
+    .gallery_popup {
+        padding: 80px;
     }
 
 
@@ -897,7 +1032,14 @@ button {
         width: 100%;
     }
 
-    
+    .content {
+        padding: 50px 10px;
+    }
+
+    .right {
+        padding-left: 60px;
+    }
+
 
 }
 
@@ -983,6 +1125,33 @@ button {
         display: block;
         margin-top: 50px;
     }
+    
+
+    .timeline::after {
+        left: 0;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .right {
+        left: 0;
+    }
+
+    .content {
+        padding: 80px 0;
+        padding-left: 50px;
+    }
+
+    .left::after {
+        left: 0;
+        top: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+    }
+
 }
 
 @media screen and (max-width: 378px) {
