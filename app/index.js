@@ -62,10 +62,10 @@ const countDown = () => {
     const minutes = Math.floor((timeSpan % hour) / minute)
     const seconds = Math.floor((timeSpan % minute) / second)
     
-    daysContainer.innerHTML = days + ' days'
-    hoursContainer.innerHTML = hours + ' hours'
-    minutesContainer.innerHTML = minutes + ' minutes'
-    secondsContainer.innerHTML = seconds + ' seconds'
+    daysContainer.innerHTML = days + ' dias'
+    hoursContainer.innerHTML = hours + ' horas'
+    minutesContainer.innerHTML = minutes + ' minutos'
+    secondsContainer.innerHTML = seconds + ' segundos'
     
 }
 
