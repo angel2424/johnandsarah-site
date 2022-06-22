@@ -1026,14 +1026,11 @@ h4 {
 
 .confirmation h4 {
     color: var(--accent-color);
+    margin-bottom: 10px;
 }
 
 .confirmation_form {
-    margin: 75px 0;
-}
-
-.confirmation_form label {
-    font-size: var(--menu-text);
+    margin-top: 75px;
 }
 
 .confirmation_text {
@@ -1052,7 +1049,7 @@ h4 {
     background-color: rgba(255, 255, 255, 0.427);
     border: 2px solid #fff;
     height: 50px;
-    width: 500px;
+    width: 35vw;
     font-size: var(--text);
     font-family: var(--roaster-regular);
     padding: 0 10px;
@@ -1064,9 +1061,6 @@ h4 {
 
 .confirmation_input:first-child {
     margin-right: 40px;
-}
-
-.confirmation_radiosTitle {
 }
 
 .confirmation_radio {
@@ -1350,6 +1344,24 @@ h4 {
         padding-bottom: 0px;
     }
 
+    .confirmation_text {
+        flex-direction: column;
+    }
+
+    .confirmation_input input {
+        width: 100%;
+    }
+
+    .confirmation_input:first-child {
+        margin-right: 0;
+        margin-bottom: 35px;
+    }
+
+    .confirmation_radio {
+        height: 20px;
+        width: 20px;
+    }
+
 }
 
 @media screen and (max-width: 680px) {
@@ -1502,6 +1514,14 @@ h4 {
         margin-bottom: 50px;
     }
 
+
+    .label_left {
+        margin-right: 30px;
+    }
+
+    .confirmation_radio {
+        margin-right: 10px;
+    }
 }
 
 @media screen and (max-width: 378px) {
