@@ -6,6 +6,8 @@ const galleryItems = document.querySelectorAll('.gallery_item')
 const Popup = document.querySelector('.gallery_popup')
 const galleryPopup = document.querySelectorAll('.popup_img')
 const popupClose = document.querySelector('.popup_close')
+const body = document.querySelector('body')
+const faqTab = document.querySelectorAll('.faq_tabs_tab')
 
 // Mobile Menu function and animation
 
@@ -79,18 +81,27 @@ let galleryTl = gsap.timeline();
 let arr = Array.from(galleryPopup);
 let ind = null;
 
-if(window.innerWidth >= 1250) {
-    popupClose.addEventListener('click', () => {
+popupClose.addEventListener('click', () => {
     Popup.classList.toggle('gallery_popup--active')
     arr[ind].classList.toggle('popup_img--active')
-    })
+    hamburguer.style.display = 'block'
+})
 
-    Array.from(galleryItems).map((item, index) => {
-        item.addEventListener('click', () => {
-            Popup.classList.toggle('gallery_popup--active')
-            arr[index].classList.toggle('popup_img--active')
-            ind = index;
+Array.from(galleryItems).map((item, index) => {
+    item.addEventListener('click', () => {
+        Popup.classList.toggle('gallery_popup--active')
+        arr[index].classList.toggle('popup_img--active')
+        ind = index;
+        hamburguer.style.display = 'none'
         })
     })
-}
+
+
+faqTab.forEach(faq => {
+    console.log(faq)
+    faq.addEventListener('click', () => {
+        faq.querySelector('.fa-chevron-down').classList.toggle('arrow');
+        faq.querySelector('.faq_text').classList.toggle('text_reveal');
+    })
+})
 

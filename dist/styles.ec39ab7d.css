@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -165,6 +169,11 @@ button {
 
 h4 {
     color: var(--primary-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .menu_text {
@@ -718,11 +727,18 @@ h4 {
     display: none;
 }
 
+
 .popup_img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     display: none;   
+}
+
+.popup_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .popup_close {
@@ -846,6 +862,10 @@ h4 {
     gap: 0 80px;
 }
 
+.hotel {
+    width: 50vw;
+}
+
 .hotel_imgContainer {
     width: 100%;
     height: 60%;
@@ -926,6 +946,10 @@ h4 {
     text-align: center;
 }
 
+.team h4 {
+    margin-bottom: 10px;
+}
+
 .members {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -946,6 +970,10 @@ h4 {
 .member_imgContainer img {
     width: 100%;
     object-fit: cover;
+}
+
+.member p {
+    opacity: .7;
 }
 
 .member:last-child {
@@ -998,6 +1026,10 @@ h4 {
     padding: var(--padding-regular-section);
 }
 
+.dress_code h4 {
+    margin-bottom: 10px;
+}
+
 .dress_code {
     text-align: center;
 }
@@ -1018,7 +1050,7 @@ h4 {
 .confirmation {
     padding: var(--padding-regular-section);
     text-align: center;
-    background-image: url(/confirmation-bg.824b735d.jpg);
+    background-image: url(/confirmation-bg.18329da3.png);
     background-size: cover;
     background-repeat: no-repeat;
     color: var(--secondary-color);
@@ -1074,6 +1106,85 @@ h4 {
 
 .confirmation_button {
     color: var(--secondary-color);
+}
+
+/* FAQ */
+
+.faq {
+    padding: var(--padding-regular-section);
+    background-color: var(--accent-color);
+}
+
+.faq > h4 {
+    margin-bottom: 10px;
+}
+
+.faq_tabs {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 0 5vw;
+    padding-top: 95px;
+}
+
+.faq_tabs_tab {
+    border-bottom: 1px solid var(--primary-color);
+    padding: 40px 0;
+}
+
+.faq_title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    transform-origin: center;
+}
+
+.faq_title h4 {
+    color: var(--text-color);   
+}
+
+.faq_text {
+    display: none;
+    margin-top: 20px;
+}
+
+.faq_title i {
+    transition: ease-in-out .2s;
+    transform-origin: center;
+}
+
+.arrow {
+    transform: rotate(180deg);
+}
+
+.text_reveal {
+    display: block;
+    padding: 40px 0;
+    animation: opacity .4s ease-in-out;
+}
+
+/* Couple message */
+
+.message {
+    text-align: center;
+    padding: var(--padding-regular-section);
+}
+
+.message h2 {
+    margin-bottom: 50px;
+}
+
+/* Hashtag footer */
+
+.hashtag_footer {
+    padding: var(--padding-regular-section);
+    padding-top: 0;
+    text-align: center;
+}
+
+.hashtag_footer p {
+    margin-bottom: 50px;
 }
 
 /* Animation Keyframes */
@@ -1362,6 +1473,11 @@ h4 {
         width: 20px;
     }
 
+    .faq_tabs {
+        padding: 0;
+        padding-top: 75px;
+    }
+
 }
 
 @media screen and (max-width: 680px) {
@@ -1446,7 +1562,28 @@ h4 {
         display: block;
         margin-top: 50px;
     }
-    
+
+    .gallery_item:hover .gallery_img {
+        transform: scale(1);
+    }
+
+    .gallery_imgText {
+        background-color: rgba(0, 0, 0, 0.658);
+        position: absolute;
+        padding: 20px;
+        bottom: 20px;
+        right: 20px;
+        color: var(--secondary-color);
+        opacity: 1;
+        transition: ease .6s;
+    }
+
+    .popup_close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
     .timeline {
         margin: 50px 5px;
     }
@@ -1510,6 +1647,14 @@ h4 {
         margin-bottom: 75px;
     }
 
+    .members {
+        margin-top: 75px;
+    }
+
+    .member {
+        margin-bottom: 15px;
+    }
+
     .registry_content h2 {
         margin-bottom: 50px;
     }
@@ -1517,6 +1662,11 @@ h4 {
 
     .label_left {
         margin-right: 30px;
+    }
+
+    .dress_codeImg {
+        width: 100%;
+        width: 30vw;
     }
 
     .confirmation_radio {
