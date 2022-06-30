@@ -184,12 +184,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"app/styles.css":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"app/submissions.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"C:\\Users\\SAM\\Documents\\Personal\\Websites\\wedding-site-02\\fonts\\Roaster-Regular.otf":[["Roaster-Regular.bc5b60bf.otf","fonts/Roaster-Regular.otf"],"fonts/Roaster-Regular.otf"],"C:\\Users\\SAM\\Documents\\Personal\\Websites\\wedding-site-02\\fonts\\Roaster-Light.otf":[["Roaster-Light.a1aeb57a.otf","fonts/Roaster-Light.otf"],"fonts/Roaster-Light.otf"],"C:\\Users\\SAM\\Documents\\Personal\\Websites\\wedding-site-02\\fonts\\Roaster-Bold.otf":[["Roaster-Bold.ce83c14b.otf","fonts/Roaster-Bold.otf"],"fonts/Roaster-Bold.otf"],"C:\\Users\\SAM\\Documents\\Personal\\Websites\\wedding-site-02\\images\\hero_bg.jpg":[["hero_bg.e8dd7a6a.jpg","images/hero_bg.jpg"],"images/hero_bg.jpg"],"C:\\Users\\SAM\\Documents\\Personal\\Websites\\wedding-site-02\\images\\confirmation-bg.png":[["confirmation-bg.18329da3.png","images/confirmation-bg.png"],"images/confirmation-bg.png"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"C:\\Users\\SAM\\Documents\\Personal\\Websites\\wedding-site-02\\fonts\\Roaster-Regular.otf":[["Roaster-Regular.bc5b60bf.otf","fonts/Roaster-Regular.otf"],"fonts/Roaster-Regular.otf"],"C:\\Users\\SAM\\Documents\\Personal\\Websites\\wedding-site-02\\fonts\\Roaster-Light.otf":[["Roaster-Light.a1aeb57a.otf","fonts/Roaster-Light.otf"],"fonts/Roaster-Light.otf"],"C:\\Users\\SAM\\Documents\\Personal\\Websites\\wedding-site-02\\fonts\\Roaster-Bold.otf":[["Roaster-Bold.ce83c14b.otf","fonts/Roaster-Bold.otf"],"fonts/Roaster-Bold.otf"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -394,4 +394,4 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/styles.ec39ab7d.js.map
+//# sourceMappingURL=/submissions.8a1ff417.js.map

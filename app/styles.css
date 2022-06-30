@@ -692,7 +692,8 @@ a {
     position: absolute;
     padding: 20px;
     bottom: 20px;
-    right: 20px;
+    right: 40px;
+    left: 0;
     color: var(--secondary-color);
     opacity: 0;
     transition: ease .6s;
