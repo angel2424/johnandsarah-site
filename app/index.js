@@ -1,4 +1,7 @@
 import gsap from 'gsap'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const hamburguer = document.querySelector('.menu_hamburguer')
 const nav = document.querySelector('.nav')
@@ -11,6 +14,7 @@ const faqTab = document.querySelectorAll('.faq_tabs_tab')
 
 // Mobile Menu function and animation
 
+let tl = gsap.timeline();
 let menuTl = gsap.timeline({paused: true});
 
 menuTl.to(nav, { 'clip-path' : 'circle(71.1% at 50% 50%)', ease: 'power2.easeInOut'})
@@ -26,7 +30,248 @@ if (window.innerWidth = 1250) {
     })
 }
 
-let tl = gsap.timeline();
+let start = '';
+
+if(body.clientWidth >= 1250) {
+    start = "top 80%"
+} else {
+    start = "top 90%"
+}
+
+
+console.log(body.clientWidth)
+
+tl.to('header', {opacity: 1, duration: .8, ease: 'power3'})
+tl.from('.reveal_up', {opacity: 0, y: 100, stagger: .3})
+
+tl.from('.nav', {opacity: 0}, '-=1')
+tl.from('.hero_bottom', {opacity: 0}, '-=1')
+
+// Countdown
+
+gsap.from(".date", {
+    opacity: 0,
+    duration: 1,
+    ease: 'power2',
+    scrollTrigger: {
+        trigger: ".countdown",
+        start: start,
+    }
+});
+
+gsap.from(".time-left", {
+    opacity: 0,
+    duration: 1,
+    ease: 'power2',
+    scrollTrigger: {
+        trigger: ".countdown",
+        start: start,
+    }
+});
+
+
+// Info
+
+gsap.from(".w-reveal", {
+    opacity: 0,
+    duration: 1,
+    ease: 'power2',
+    stagger: .2,
+    scrollTrigger: {
+        trigger: ".wedding_times",
+        start: start,
+    }
+});
+
+// Story
+
+gsap.from(".s-reveal", {
+    opacity: 0,
+    duration: .5 ,
+    ease: 'power2.out',
+    stagger: .3,
+    scrollTrigger: {
+        trigger: ".story_content",
+        start: start,
+    }
+});
+
+gsap.from(".story_img", {
+    opacity: 0,
+    duration: .8,
+    ease: 'power1',
+    scrollTrigger: {
+        trigger: ".story_content",
+        start: start,
+    }
+});
+
+// location
+
+gsap.from(".l-reveal", {
+    opacity: 0,
+    duration: .5 ,
+    ease: 'power2.out',
+    stagger: .3,
+    scrollTrigger: {
+        trigger: ".location h2",
+        start: start,
+    }
+});
+
+// Gallery
+
+gsap.from(".g-reveal", {
+    opacity: 0,
+    duration: .3 ,
+    ease: 'power2.out',
+    stagger: .3,
+    scrollTrigger: {
+        trigger: ".gallery h2",
+        start: start,
+    }
+});
+
+// Events
+
+gsap.from(".e-reveal", {
+    opacity: 0,
+    duration: .5 ,
+    ease: 'power2.out',
+    stagger: .3,
+    scrollTrigger: {
+        trigger: ".events h2",
+        start: start,
+    }
+});
+
+
+// Hotels
+
+gsap.from(".h-reveal", {
+    opacity: 0,
+    duration: .5 ,
+    ease: 'power2.out',
+    stagger: .3,
+    scrollTrigger: {
+        trigger: ".hotels h2",
+        start: start,
+    }
+});
+
+// Hotels
+
+gsap.from(".ent-reveal", {
+    opacity: 0,
+    duration: .5 ,
+    ease: 'power2.out',
+    stagger: .3,
+    scrollTrigger: {
+        trigger: ".entertainments h2",
+        start: start,
+    }
+});
+
+// Team
+
+gsap.from(".t-reveal", {
+    opacity: 0,
+    duration: .3 ,
+    ease: 'power2.out',
+    stagger: .3,
+    scrollTrigger: {
+        trigger: ".team h2",
+        start: start,
+    }
+});
+
+// Registry
+
+gsap.from(".r-reveal", {
+    opacity: 0,
+    duration: .3 ,
+    ease: 'power2.out',
+    stagger: .3,
+    scrollTrigger: {
+        trigger: ".registry h2",
+        start: start,
+    }
+});
+
+gsap.from(".registry_img", {
+    opacity: 0,
+    duration: .8,
+    ease: 'power1',
+    scrollTrigger: {
+        trigger: ".registry_content",
+        start: start,
+    }
+});
+
+// Dress code
+
+gsap.from(".d-reveal", {
+    opacity: 0,
+    duration: .3 ,
+    ease: 'power2.out',
+    stagger: .3,
+    scrollTrigger: {
+        trigger: ".dress_code h2",
+        start: start,
+    }
+});
+
+// Confirmation
+
+gsap.from(".c-reveal", {
+    opacity: 0,
+    duration: .3 ,
+    ease: 'power2.out',
+    stagger: .25,
+    scrollTrigger: {
+        trigger: ".confirmation h2",
+        start: start,
+    }
+});
+
+// FAQ
+
+gsap.from(".f-reveal", {
+    opacity: 0,
+    duration: .3 ,
+    ease: 'power2.out',
+    stagger: .25,
+    scrollTrigger: {
+        trigger: ".faq h2",
+        start: start,
+    }
+});
+
+gsap.from(".f-revealUp", {
+    opacity: 0,
+    y: 100,
+    duration: .3 ,
+    ease: 'power2',
+    stagger: .3,
+    scrollTrigger: {
+        trigger: ".faq h2",
+        start: start,
+    }
+});
+
+
+gsap.from(".m-reveal", {
+    opacity: 0,
+    duration: .3 ,
+    ease: 'power2.out',
+    stagger: .25,
+    scrollTrigger: {
+        trigger: ".message h2",
+        start: start,
+    }
+});
+
+
 
 
 
