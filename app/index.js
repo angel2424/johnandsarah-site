@@ -5,6 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const hamburguer = document.querySelector('.menu_hamburguer')
 const nav = document.querySelector('.nav')
+const menuLink = document.querySelectorAll('.menu_link')
 const galleryItems = document.querySelectorAll('.gallery_item')
 const Popup = document.querySelector('.gallery_popup')
 const galleryPopup = document.querySelectorAll('.popup_img')
@@ -27,6 +28,12 @@ if (window.innerWidth = 1250) {
     hamburguer.addEventListener('click', (e) => {
         hamburguer.classList.toggle('close')
         menuTl.reversed(!menuTl.reversed())
+    })
+    menuLink.forEach(item => {
+        item.addEventListener('click', (e) => {
+            hamburguer.classList.toggle('close')
+            menuTl.reversed(!menuTl.reversed())
+        })
     })
 }
 

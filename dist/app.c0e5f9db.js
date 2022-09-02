@@ -8919,6 +8919,7 @@ _gsap.default.registerPlugin(_ScrollTrigger.ScrollTrigger);
 
 var hamburguer = document.querySelector('.menu_hamburguer');
 var nav = document.querySelector('.nav');
+var menuLink = document.querySelectorAll('.menu_link');
 var galleryItems = document.querySelectorAll('.gallery_item');
 var Popup = document.querySelector('.gallery_popup');
 var galleryPopup = document.querySelectorAll('.popup_img');
@@ -8953,6 +8954,12 @@ if (window.innerWidth = 1250) {
   hamburguer.addEventListener('click', function (e) {
     hamburguer.classList.toggle('close');
     menuTl.reversed(!menuTl.reversed());
+  });
+  menuLink.forEach(function (item) {
+    item.addEventListener('click', function (e) {
+      hamburguer.classList.toggle('close');
+      menuTl.reversed(!menuTl.reversed());
+    });
   });
 }
 
@@ -9280,7 +9287,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53626" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64766" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
