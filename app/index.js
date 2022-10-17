@@ -285,7 +285,7 @@ gsap.from(".m-reveal", {
 // Countdown Timer
 
 let timeLeft = document.querySelector('#time-left')
-const date = new Date('09/16/2022');
+const date = new Date('09/16/2023');
 const second = 1000;
 const minute = second * 60;
 const hour = minute * 60;
