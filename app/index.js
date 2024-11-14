@@ -83,7 +83,7 @@ gsap.from(".w-reveal", {
     opacity: 0,
     duration: 1,
     ease: 'power2',
-    stagger: .2,
+    stagger: '.3',
     scrollTrigger: {
         trigger: ".wedding_times",
         start: start,
@@ -285,7 +285,7 @@ gsap.from(".m-reveal", {
 // Countdown Timer
 
 let timeLeft = document.querySelector('#time-left')
-const date = new Date('09/16/2023');
+const date = new Date('02/16/2025');
 const second = 1000;
 const minute = second * 60;
 const hour = minute * 60;
@@ -300,7 +300,7 @@ const secondsContainer = document.querySelector('.seconds')
 const countDown = () => {
     const today = new Date();
     const timeSpan = date - today;
-    
+
     if(timeSpan <= - day) {
         timeLeft.innerHTML = 'Gracias por asisitir a nuestro gran dia'
         clearInterval(timerId)
@@ -309,18 +309,18 @@ const countDown = () => {
         timeLeft.innerHTML = "It's finally the day!"
         clearInterval(timerId)
         return
-    } 
+    }
 
     const days = Math.floor(timeSpan / day);
     const hours = Math.floor((timeSpan % day) / hour)
     const minutes = Math.floor((timeSpan % hour) / minute)
     const seconds = Math.floor((timeSpan % minute) / second)
-    
+
     daysContainer.innerHTML = days + ' dias'
     hoursContainer.innerHTML = hours + ' horas'
     minutesContainer.innerHTML = minutes + ' minutos'
     secondsContainer.innerHTML = seconds + ' segundos'
-    
+
 }
 
 timerId = setInterval(countDown, second)
@@ -356,4 +356,3 @@ faqTab.forEach(faq => {
         faq.querySelector('.faq_text').classList.toggle('text_reveal');
     })
 })
-
